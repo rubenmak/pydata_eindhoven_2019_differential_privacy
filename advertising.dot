@@ -1,0 +1,8 @@
+strict graph  {
+consumers;
+publishers;
+advertisers;
+consumers -- publishers;
+consumers -- advertisers;
+publishers -- advertisers;
+}
