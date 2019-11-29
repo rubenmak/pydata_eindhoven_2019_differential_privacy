@@ -12962,8 +12962,8 @@ female    314
 male      573
 Name: Name, dtype: int64
 Sex
-female    305.689754
-male      573.895788
+female    309.189154
+male      572.987451
 Name: Name, dtype: float64
 </pre>
 </div>
@@ -13070,12 +13070,12 @@ male    1         122
         3         343
 Name: Name, dtype: int64
 Sex     Pclass
-female  1          93.764943
-        2          70.667713
-        3         144.514599
-male    1         121.139825
-        2         105.692256
-        3         342.649411
+female  1          91.617993
+        2          74.308927
+        3         143.025309
+male    1         122.872311
+        2         108.738894
+        3         341.218791
 Name: Name, dtype: float64
 </pre>
 </div>
@@ -13115,7 +13115,8 @@ Name: Name, dtype: float64
 <span class="n">eps</span> <span class="o">=</span> <span class="mf">0.5</span>
 <span class="n">n_queries</span> <span class="o">=</span> <span class="mi">1000</span>
 
-<span class="n">sex_counts</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;female&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_queries</span><span class="p">),</span> <span class="s1">&#39;male&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_queries</span><span class="p">)})</span>
+<span class="n">sex_counts</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;female&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_queries</span><span class="p">),</span> 
+                           <span class="s1">&#39;male&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_queries</span><span class="p">)})</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_queries</span><span class="p">):</span>
     <span class="n">query_result</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Sex&#39;</span><span class="p">])[</span><span class="s1">&#39;Name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
@@ -13148,11 +13149,11 @@ female    314
 male      573
 Name: Name, dtype: int64
 Sex
-female    313.566227
-male      573.107891
+female    313.176466
+male      569.554129
 Name: Name, dtype: float64
-female    313.908589
-male      573.059471
+female    313.896102
+male      573.038990
 dtype: float64
 </pre>
 </div>
@@ -13164,7 +13165,7 @@ dtype: float64
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Second pitfall: leaking GROUP BY keys</span>
@@ -13202,17 +13203,17 @@ dtype: float64
 80.00    1
 Name: Name, Length: 89, dtype: int64
 Age
-0.42     0.585852
-0.67     0.900152
-0.75     1.868675
-0.83     2.277529
-0.92     0.976776
+0.42     1.344252
+0.67     1.311796
+0.75     2.258580
+0.83     1.670412
+0.92     1.228510
            ...   
-70.00    1.727670
-70.50    1.355556
-71.00    2.021196
-74.00    1.079798
-80.00    0.677999
+70.00    1.678704
+70.50    3.392327
+71.00    1.654634
+74.00    1.460536
+80.00    0.141873
 Name: Name, Length: 89, dtype: float64
 </pre>
 </div>
@@ -13224,7 +13225,7 @@ Name: Name, Length: 89, dtype: float64
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Second pitfall: leaking GROUP BY keys</span>
@@ -13260,17 +13261,17 @@ Name: Name, Length: 89, dtype: float64
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>    Age      Count
-0     0   6.748468
-1     1   7.125204
-2     2  11.735330
-3     3   5.863100
-4     4  12.283480
+0     0   6.139599
+1     1   6.997090
+2     2  11.091665
+3     3   6.645981
+4     4  11.190400
 ..  ...        ...
-95   95   0.529279
-96   96   0.178851
-97   97   0.019532
-98   98  -0.832968
-99   99  -0.389652
+95   95  -0.065799
+96   96  -0.504415
+97   97  -0.111499
+98   98  -0.303362
+99   99  -0.719411
 
 [100 rows x 2 columns]
 </pre>
@@ -13283,7 +13284,7 @@ Name: Name, Length: 89, dtype: float64
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Second pitfall: leaking GROUP BY keys</span>
@@ -13312,16 +13313,16 @@ Name: Name, Length: 89, dtype: float64
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Age
-47.0     9.809503
-48.0    12.255654
-49.0     7.980488
-50.0    10.067832
-51.0     6.520294
-52.0     6.219860
-54.0     9.143246
-58.0     4.529459
-60.0     4.688017
-62.0     5.052299
+47.0    10.399633
+48.0    12.726664
+49.0     8.004608
+50.0     9.251278
+51.0     7.067275
+52.0     5.322723
+54.0     8.809253
+58.0     4.890099
+60.0     4.661651
+62.0     6.705867
 Name: Name, dtype: float64
 </pre>
 </div>
@@ -13358,7 +13359,7 @@ Name: Name, dtype: float64
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">graphviz</span><span class="o">.</span><span class="n">Source</span><span class="p">(</span><span class="n">dot_graph</span><span class="p">)</span>
@@ -13374,7 +13375,7 @@ Name: Name, dtype: float64
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[16]:</div>
+<div class="prompt output_prompt">Out[15]:</div>
 
 
 
@@ -13403,7 +13404,7 @@ Name: Name, dtype: float64
 <text text-anchor="middle" x="46.7958" y="-86.3" font-family="Times,serif" font-size="14.00" fill="#000000">publishers</text>
 </g>
 <!-- consumers&#45;&#45;publishers -->
-<g id="edge1" class="edge">
+<g id="edge2" class="edge">
 <title>consumers&#45;&#45;publishers</title>
 <path fill="none" stroke="#000000" d="M74.6498,-144.2022C68.9574,-133.1252 61.6616,-118.928 55.9649,-107.8425"/>
 </g>
@@ -13414,7 +13415,7 @@ Name: Name, dtype: float64
 <text text-anchor="middle" x="83.7958" y="-14.3" font-family="Times,serif" font-size="14.00" fill="#000000">advertisers</text>
 </g>
 <!-- consumers&#45;&#45;advertisers -->
-<g id="edge2" class="edge">
+<g id="edge1" class="edge">
 <title>consumers&#45;&#45;advertisers</title>
 <path fill="none" stroke="#000000" d="M91.8875,-143.9165C96.052,-133.6179 100.6876,-120.3436 102.7958,-108 105.4895,-92.2284 105.4895,-87.7716 102.7958,-72 100.6876,-59.6564 96.052,-46.3821 91.8875,-36.0835"/>
 </g>
@@ -13466,7 +13467,7 @@ Name: Name, dtype: float64
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Final-thoughts">Final thoughts<a class="anchor-link" href="#Final-thoughts">&#182;</a></h2><ul>
 <li>Unfortunately, differential privacy, or 'not having personal data' doesn't solve all issues</li>
-<li>Essentially, advertising is influencing consumer behavior</li>
+<li>Essentially, advertising and marketing in general is influencing consumer behavior</li>
 </ul>
 
 </div>
@@ -13484,7 +13485,8 @@ Name: Name, dtype: float64
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="I-would-like-to-thank-the-passengers-of-the-Titanic,-whose-data-I-used-without-their-consent">I would like to thank the passengers of the Titanic, whose data I used without their consent<a class="anchor-link" href="#I-would-like-to-thank-the-passengers-of-the-Titanic,-whose-data-I-used-without-their-consent">&#182;</a></h3>
+<h3 id="I-would-like-to-thank-the-passengers-of-the-Titanic">I would like to thank the passengers of the Titanic<a class="anchor-link" href="#I-would-like-to-thank-the-passengers-of-the-Titanic">&#182;</a></h3><p>I don't think they have given consent for being part of this talk</p>
+
 </div>
 </div>
 </div></section></section>

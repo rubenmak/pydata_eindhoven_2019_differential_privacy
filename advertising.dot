@@ -2,7 +2,7 @@ strict graph  {
 consumers;
 publishers;
 advertisers;
-consumers -- publishers;
 consumers -- advertisers;
+consumers -- publishers;
 publishers -- advertisers;
 }
