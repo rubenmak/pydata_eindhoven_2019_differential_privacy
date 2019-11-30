@@ -12722,7 +12722,7 @@ a.anchor-link {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p class="gap2">
-<h1 style="color: #ed9041">Advertising, Algorithms and Privacy: <br>
+<h1 style="font-weight: bold; color: #ed9041">Advertising, Algorithms and Privacy: <br>
 Recent Open-source Developments</h1>
 
 <h2 style="color: #667b83">Or actually only differential privacy</h2>
@@ -12853,7 +12853,7 @@ Head of Data Science at Greenhouse</h3>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="What-do-we-use-for-$Laplace(\mu,b)$?">What do we use for $Laplace(\mu,b)$?<a class="anchor-link" href="#What-do-we-use-for-$Laplace(\mu,b)$?">&#182;</a></h2><p>$\mu = 0$ we don't want to bias results!</p>
-<p>$b = \dfrac{s}{\epsilon}$ gives $\epsilon$-differential privacy where $s$ is the sensitivity bound of the function</p>
+<p>$b = \dfrac{s}{\epsilon}$ gives $\epsilon$-differential privacy where $s$ is the sensitivity of the function</p>
 <p><img src='images/function_sensitivity.png'></p><ul>
 <li>First pitfall: multiple contributions within a partition</li>
 <li>Second pitfall: leaking GROUP BY keys</li>
@@ -12962,8 +12962,8 @@ female    314
 male      573
 Name: Name, dtype: int64
 Sex
-female    309.189154
-male      572.987451
+female    315.160621
+male      575.573706
 Name: Name, dtype: float64
 </pre>
 </div>
@@ -12981,7 +12981,7 @@ Name: Name, dtype: float64
 <li>Jack Golddigger wants to flirt with women that travel at least second or first class</li>
 <li>He starts counting women in the third class area. He counts 144.</li>
 <li>He becomes buddies with the captain and after some drinks he asks whether he can have the passenger list</li>
-<li>The captain wants to help Jack, but he suddenly he realizes that the he didn't ask the passengers for consent to share their personal data with Jack. He doesn't want to be fined for violating GDPR! So he tells check he will only give him aggregated data.</li>
+<li>The captain wants to help Jack, but he suddenly he realizes that the he didn't ask the passengers for consent to share their personal data with Jack. He doesn't want to be fined for violating GDPR! So he tells Jack he will only give him aggregated data.</li>
 <li>Let's see the scenario where the captain doesn't know about differential privacy</li>
 </ul>
 
@@ -13070,12 +13070,12 @@ male    1         122
         3         343
 Name: Name, dtype: int64
 Sex     Pclass
-female  1          91.617993
-        2          74.308927
-        3         143.025309
-male    1         122.872311
-        2         108.738894
-        3         341.218791
+female  1          92.393779
+        2          78.317790
+        3         145.322847
+male    1         122.838230
+        2         104.874157
+        3         342.731919
 Name: Name, dtype: float64
 </pre>
 </div>
@@ -13149,11 +13149,11 @@ female    314
 male      573
 Name: Name, dtype: int64
 Sex
-female    313.176466
-male      569.554129
+female    314.171543
+male      572.923044
 Name: Name, dtype: float64
-female    313.896102
-male      573.038990
+female    313.883663
+male      572.942668
 dtype: float64
 </pre>
 </div>
@@ -13203,17 +13203,17 @@ dtype: float64
 80.00    1
 Name: Name, Length: 89, dtype: int64
 Age
-0.42     1.344252
-0.67     1.311796
-0.75     2.258580
-0.83     1.670412
-0.92     1.228510
+0.42     1.502562
+0.67    -0.607628
+0.75     2.474326
+0.83     3.784575
+0.92     0.784763
            ...   
-70.00    1.678704
-70.50    3.392327
-71.00    1.654634
-74.00    1.460536
-80.00    0.141873
+70.00    1.960645
+70.50    0.844013
+71.00    1.844281
+74.00    1.317209
+80.00    0.732272
 Name: Name, Length: 89, dtype: float64
 </pre>
 </div>
@@ -13261,17 +13261,17 @@ Name: Name, Length: 89, dtype: float64
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>    Age      Count
-0     0   6.139599
-1     1   6.997090
-2     2  11.091665
-3     3   6.645981
-4     4  11.190400
+0     0   7.094426
+1     1   6.171550
+2     2  10.614658
+3     3   6.723498
+4     4  10.703878
 ..  ...        ...
-95   95  -0.065799
-96   96  -0.504415
-97   97  -0.111499
-98   98  -0.303362
-99   99  -0.719411
+95   95   0.748973
+96   96   0.075152
+97   97   1.065507
+98   98  -0.342207
+99   99  -0.062678
 
 [100 rows x 2 columns]
 </pre>
@@ -13313,16 +13313,16 @@ Name: Name, Length: 89, dtype: float64
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Age
-47.0    10.399633
-48.0    12.726664
-49.0     8.004608
-50.0     9.251278
-51.0     7.067275
-52.0     5.322723
-54.0     8.809253
-58.0     4.890099
-60.0     4.661651
-62.0     6.705867
+47.0     9.804435
+48.0    11.328305
+49.0     7.494864
+50.0    10.047409
+51.0     6.980026
+52.0     5.273298
+54.0     9.182714
+58.0     4.947854
+60.0     3.241174
+62.0     4.733766
 Name: Name, dtype: float64
 </pre>
 </div>
